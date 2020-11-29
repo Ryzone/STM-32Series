@@ -1,4 +1,4 @@
-#Before The Begin
+Before The Begin
 -
 STM32环境入门（以stm32f10x系列为例）
 
