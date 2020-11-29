@@ -1,7 +1,7 @@
 Before The Begin
 =
 STM32环境入门（以stm32f10x系列为例）
-
+<br/>
 对于大部分STM32初学者，遇到的第一个问题就是新建工程。
 根据实验，我总结了一套方法：
 总体思路：先建立寄存器工程，再扩充库函数
@@ -13,14 +13,19 @@ STM32环境入门（以stm32f10x系列为例）
 
 *Step.0.2  获取ARM内核文件以及启动文件
 
+<br/>
 *Step.1.0  创建工程文件目录
 
+<br/>
 *Step.1.1
 
+<br/>
 *Step.1.2  在MDK内新建工程
 
+<br/>
 *Step.1.3  管理工程项目
 
+<br/>
   在目录\System下，添加系统资源管理文件："system_stm32f10x.c" "STM32F10X.H"
   在目录\Core下，添加内核文件："core_cm3.c"
   在目录\User下，添加汇编启动文件："startup_stm32f10x"
@@ -28,7 +33,7 @@ STM32环境入门（以stm32f10x系列为例）
   打开Options选项，切换至C/C++选项卡
     在预处理栏中输入：STM32F10X_HD --根据芯片实际RAM大小有_H（High），_M（Middle），_L（Low）
     在文件包含路径中添加相关文件目录：..\Core;..\System --由于工程建立在User文件夹下，因此作为默认目录下的文件不必添加路径
-  
+<br/>
 *Step.1.4  验证工程
 
   在目录\User下创建main.c文件，输入以下代码：
