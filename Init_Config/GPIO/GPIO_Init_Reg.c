@@ -1,1 +1,19 @@
+#inlcude "GPIO_INIT_REG.H"
 
+void GPIO_Init_Reg()
+{
+	RCC->APB2ENR |= RCC_APB2EN_IOAEN;
+	
+	GPIOA->CRL &= 0x00000000;
+	GPIOA->CRH &= 0x00000000;
+	
+	GPIOA->CRL |= 0x33333333;
+	GPIOA->CRH |= 0x33333333;
+}
+
+/*
+ODR
+BSRR
+BRR
+IDR
+*/
