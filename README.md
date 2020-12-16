@@ -11,13 +11,19 @@ STM32环境入门（以stm32f10x系列为例）
   Keil公司旗下的MDK，目前我所安装的版本为MDK5.29
 *Step.0.1  安装STM32系列单片机支持包
 
-*Step.0.2  获取ARM内核文件以及启动文件
+*Step.0.2  获取ARM内核文件、系统文件以及启动文件
+
+内核文件："core_cm3.c" 及其头文件 "core_cm3.h" --
+系统文件："STM32F10X.H" "system_stm32f10x.c" 及其头文件  "system_stm32f10x.h"
+启动文件："startup_stm32f10x.s"  --
+
+启动文件功能：汇编语言文件，绑定常用函数的入口，引导单片机正确启动，执行程序
 
 <br/>
 *Step.1.0  创建工程文件目录
 
 <br/>
-*Step.1.1
+*Step.1.1  向工程目录挂载文件
 
 <br/>
 *Step.1.2  在MDK内新建工程
