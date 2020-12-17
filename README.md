@@ -8,7 +8,7 @@ STM32环境入门（以stm32f10x系列为例）
 
 *Step.0.0  安装开发环境
 
-  Keil公司旗下的MDK，目前我所安装的版本为MDK5.29。5.29支持AC5（Arm Compiler）版本的编译模式，而5.30之后的均默认开启AC6版本编译模式，新建工程时会产生大量的编译错误和警告，就是因为在AC6的检查中不支持
+  Keil公司旗下的MDK，目前我所安装的版本为MDK5.29，支持AC5（Arm Compiler）版本的编译模式，而5.30之后的均默认开启AC6版本编译模式，新建工程时会产生大量的编译错误和警告，就是因为在AC6的检查中不支持。
 
 *Step.0.1  安装STM32系列单片机支持包
 
@@ -33,11 +33,13 @@ STM32环境入门（以stm32f10x系列为例）
 *Step.1.3  管理工程项目
 
 <br/>
-  在目录\System下，添加系统资源管理文件："system_stm32f10x.c" "STM32F10X.H"
-  在目录\Core下，添加内核文件："core_cm3.c"
-  在目录\User下，添加汇编启动文件："startup_stm32f10x.s"
+  在目录 \System 下，添加系统资源管理文件："system_stm32f10x.c" "STM32F10X.H"
+  在目录 \Core 下，添加内核文件："core_cm3.c"
+  在目录 \User 下，添加汇编启动文件："startup_stm32f10x.s"
   
-  打开Options选项，切换至C/C++选项卡
+  打开 "Options" 选项，切换至 "Target" 选项卡
+    在 "Code Generation" 栏中的 "ARM Compiler" 菜单，下拉选择 "Use default compiler version 5" 选项，修改至AC5编译模式（5.30之后默认为AC6）
+  打开 "Options" 选项，切换至 "C/C++" 选项卡
     在预处理栏中输入：STM32F10X_HD --根据芯片实际RAM大小有_H（High），_M（Middle），_L（Low）
     在文件包含路径中添加相关文件目录：..\Core;..\System --由于工程建立在User文件夹下，因此作为默认目录下的文件不必添加路径
 <br/>
