@@ -8,7 +8,7 @@
 
 + **PACK**：为避免过于臃肿，Keil将MDK附加的软件组件和对微控制器设备的支持以软件包的形式提供，因此在对芯片编程前需要预装相关的芯片包
 
-+ **CMSIS**：CMSIS芯片文件是ARM与芯片厂商建立的一套标准，全称CortexMicroController Software Interface Standard，能广泛用于相同Cortex内核的芯片，保证了不同厂商生产的芯片相互兼容：
++ **CMSIS**：CMSIS文件是ARM公司与芯片厂商建立的一套标准，全称CortexMicroController Software Interface Standard，能广泛用于相同Cortex内核的芯片，保证了不同厂商生产的芯片相互兼容：
 
   - 内核部分(CoreSupport)：由ARM提供的用于访问内核寄存器的名称、地址定义
 
@@ -18,8 +18,12 @@
 
 ### 扩展部分
 
-* **API**：
-  * STD：
-  * HAL：
-  * LL：
-* **STM32CubeMX**:
+* **APIs**：
+
+  * STD：即Standard Peripheral Libraries，最为ST公司最早推出的标准库
+  
+  * HAL：硬件抽象层(Hardware Abstraction Layer)，是高级函数封装API，向用户屏蔽了复杂的外设配置过程，具有高移植性
+  
+  * LL：和STD库类似，Low-Layer属于寄存器级的底层API，有较好的优化，相应可移植性较差，适合快速、轻量级开发
+  
+* **STM32CubeMX**：STM32CubeMX是一款图形化工具，它能够通过简单的分步操作，轻易为STM32系列Cortex-M、Linux属Cortex-A内核的MCU与MPU进行配置和初始化，生成对应设备的初始化代码
