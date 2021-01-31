@@ -7,6 +7,6 @@ STM32是一个很庞大的系列，因此将公共的部分放置在外面，而
 
 软件环境搭建
 
-### 工程模板的建立：[Project Template](https://github.com/Ryzone/STM-32Series/new/main)
+### 工程模板的建立：[Project Template.md](https://github.com/Ryzone/STM-32Series/blob/main/Project%20Template.md)
 
 ### 编程思维的辩证：
