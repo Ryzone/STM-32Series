@@ -82,7 +82,49 @@
 |    LL    | [F-LL]() | [G-LL]() |
 |    STD   | [F-STD]()|
 
-##### 附：常见问题与解决方案
+到这里，工程模板的建立就算是告一段落了，工程模板一旦建立，往后的开发可以直接沿用，快速投身于项目中，不必再反复创建。虽说过程繁琐，但整体并不算难，而在这过程中是能够明白很多工程文件之间的运作关系的，作为开发人员，是需要拥有自行创建工程模板的能力的
+
+<details> 
+  <summary>  附：常见问题与解决方案 </summary>
+
+###### 编译错误：error: L6236E: No section matches selector - no section to be FIRST/LAST.
+
+添加**Startup*.s**文件到项目中
+
+###### 编译警告：
+
+在**Startup*.s**文件中，找到
+```
+Reset_Handler    PROC
+                 EXPORT  Reset_Handler             [WEAK]
+                 IMPORT  SystemInit
+                 IMPORT  __main
+
+                 LDR     R0, =SystemInit
+                 BLX     R0
+                 LDR     R0, =__main
+                 BX      R0
+                 ENDP
+```
+并修改为
+```
+Reset_Handler    PROC
+                 EXPORT  Reset_Handler             [WEAK]
+                 ;IMPORT  SystemInit
+                 IMPORT  __main
+
+                 ;LDR     R0, =SystemInit
+                 ;BLX     R0
+                 LDR     R0, =__main
+                 BX      R0
+                 ENDP
+```
+因为该汇编启动文件规定程序在进入主函数之前，会先进入函数`SystemInit()`初始化系统时钟，有的芯片支撑文件中不一定会自带此函数，导致编译错误，只需将调用部分注释掉即可
+
+###### 编译警告：warning:  #1-D: last line of file ends without a newline
+
+
+
 
 ###### 芯片型号不一致
 
@@ -124,3 +166,4 @@
 
 若需要程序下载后立即执行，则在**Debug**选项卡下点击右侧**Setting**按钮，在内 Flash Download 选项卡中勾选*Reset and Run*
 
+</details>
