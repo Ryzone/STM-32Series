@@ -83,3 +83,44 @@
 |    STD   | [F-STD]()|
 
 ##### 附：常见问题与解决方案
+
+###### 芯片型号不一致
+
+打开 Options for Target ，在**Device**选项卡中可以重新选择芯片型号
+
+###### 默认晶振时间不一致
+
+在**Target**选项卡中，Xtal(Mhz)一栏填写正确的时钟频率
+
+###### 不生成HEX格式文件
+
+首先检查程序编译和生成过程中是否产生错误，若没有，则在**Output**选项卡中勾选*Creat HEX File*
+
+###### 修改工程输出路径
+
+在**Output**选项卡中，点击*Select Folder for Objects*按钮，选择中间文件路径
+
+###### 修改中间文件路径
+
+在**Listing**选项卡中，点击*Select Folder for Listing*按钮，选择中间文件路径
+
+###### 编译不支持内联函数
+
+这是由于工程文件不支持最新的编译版本导致的，可以看到在**C/C++** 选项卡中出现了 *(AC6)* 的字样，Target选项卡中CodeGeneration栏下拉菜单中选择Use Default Compiler version 5
+
+###### C99 Mode
+
+在**C/C++** 选项卡中勾选*C99 Mode*
+
+###### 下载器无法连上
+
+**Debug**选项卡下，确认勾选*Use Debugger*而非*Use Simulator*，下拉选择对应的下载仿真器
+
+点击右侧**Settings**按钮，在内 Debug 选项卡中配置*Port*和*Max Clock*
+
+###### 下载程序不执行
+
+检查程序逻辑无误后，通过板载复位键重置
+
+若需要程序下载后立即执行，则在**Debug**选项卡下点击右侧**Setting**按钮，在内 Flash Download 选项卡中勾选*Reset and Run*
+
