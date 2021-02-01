@@ -23,8 +23,11 @@
 * **STM32CubeMX**：STM32CubeMX是一款图形化工具，它能够通过简单的分步操作，轻易为STM32系列Cortex-M、Linux属Cortex-A内核的MCU与MPU进行配置和初始化，生成对应设备的初始化代码
 
 * **APIs**：
+> 封装的函数多了，也便成了库
 
-  * STD：即Standard Peripheral Libraries，最为ST公司最早推出的标准库
+为适应变化的开发环境，ST公司用标准函数封装起繁琐的寄存器配置，并给出了不同层级的库，省去了学习底层的成本和一步步配置的麻烦，常用的API有以下几种：
+
+  * STD：即Standard Peripheral Libraries，是ST公司最早推出的标准库
   
   * HAL：硬件抽象层(Hardware Abstraction Layer)，是高级函数封装API，向用户屏蔽了复杂的外设配置过程，具有高移植性
   
@@ -62,13 +65,19 @@
 
 ## Step.2 创建寄存器工程
 
+  CMSIS标准的建立，为芯片内核和外设实现一致且简单的软件接口，使寄存器从单纯的总线地址变得有名有姓，奠定了快速开发的基础，绝大部分交互和控制的实现都能通过操作和配置寄存器来实现。而我们常说的基于函数库的开发均在此之上，倘若将工程中各种库的外衣剥去，不变就是寄存器工程了。因此，了解和学习寄存器，对开发来说是很有必要的
+
+  虽说都是基于CMSIS标准，但随着版本的更新和新型号陆续推出，不同系列的芯片的工程结构不尽相同，这里进行区分
+
+* STM32 F系列：[F Series](https://github.com/Ryzone/STM-32Series/tree/main/F%20Series/A%20New%20Project)
+* STM32 G系列：[G Series](https://github.com/Ryzone/STM-32Series/tree/main/G%20Series/A%20New%20Project)
+
+## Step.3 扩充函数库
+
 [F Series](https://github.com/Ryzone/STM-32Series/tree/main/F%20Series/A%20New%20Project)|[G Series](https://github.com/Ryzone/STM-32Series/tree/main/G%20Series/A%20New%20Project)
 :---:|:---:
-[F-Register]()|[G-Register]()
 [F-HAL]()|[G-HAL]()
 [F-LL]()|[G-LL]()
 [F-STD]()|
-
-## Step.3 
 
 ##### 附：常见问题与解决方案
