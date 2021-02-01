@@ -34,11 +34,10 @@
   * LL：与STD库类似，Low-Layer属于寄存器级的底层API，有较好的优化，相应可移植性较差，适合快速、轻量级开发
 
 ## Step.1 建立工程目录
-实际上，工程目录并没有统一的规定，可以说连官方提供的模板都可能因版本而有不同变化。即便如此，我们也能一窥其中的一些共识，通过观察各种路径规划并结合自己的理解，就有了下面的目录模板，在自建工程的时候，就会以此为标准：
-
-<pre>
-│  
-└─STM32_ProjectTemplate
+实际上，工程目录并没有统一的规定，可以说连官方提供的模板都可能因版本而有不同变化。即便如此，我们也能一窥其中的一些共识，通过观察各种路径规划并结合自己的理解，就有了下面的目录模板，我在自建工程的时候，会以此为标准：
+<details> 
+  <summary> STM32_ProjectTemplate </summary>
+  <pre>
     │  
     ├─CMSIS
     │  ├─CoreSupport
@@ -60,8 +59,11 @@
     ├─MDK-ARM
     └─User
         ├─Include
-        └─Source
-</pre>
+        └─Source      
+  </pre>
+</details>
+
+当然，免不了的还是要强调一下，**文件目录中尽量不要有中文！**
 
 ## Step.2 创建寄存器工程
 
@@ -74,10 +76,10 @@
 
 ## Step.3 扩充函数库
 
-[F Series](https://github.com/Ryzone/STM-32Series/tree/main/F%20Series/A%20New%20Project)|[G Series](https://github.com/Ryzone/STM-32Series/tree/main/G%20Series/A%20New%20Project)
-:---:|:---:
-[F-HAL]()|[G-HAL]()
-[F-LL]()|[G-LL]()
-[F-STD]()|
+|          | F Series | G Series |
+|:---------|:--------:|:--------:|
+|    HAL   | [F-HAL]()| [G-HAL]()|
+|    LL    | [F-LL]() | [G-LL]() |
+|    STD   | [F-STD]()|
 
 ##### 附：常见问题与解决方案
