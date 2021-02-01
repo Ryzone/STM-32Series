@@ -1,11 +1,10 @@
 # 寄存器工程
 
-首先，在目录下填充文件
-<detials>
-  <summary> 文件目录 <summary/>
-<pre>
+首先，我们基于现有目录来添加文件，形成以下结构：
 
-└─STM32_ProjectTemplate
+<details>
+  <summary> STM32_ProjectTemplate </summary> 
+  <pre>
     ├─CMSIS
     │  ├─CoreSupport
     │  │  ├─Inc
@@ -21,7 +20,7 @@
     │      │      
     │      └─Src
     │              system_stm32f10x.c
-    │              
+    │                
     ├─Drivers
     │  ├─HAL_Driver
     │  │  ├─Inc
@@ -43,6 +42,20 @@
         ├─Include
         └─Source
                 main.c
-                
-<pre/>
-<detials/>
+  </pre>
+</details>
+
+然后，利用MDK在MDK-ARM文件夹下新建工程
+
+Project -> New μVision Project... -> 工程名 -> Save
+
+选择对应的芯片
+
+再者，
+
+第四
+
+接着
+
+最后
+
