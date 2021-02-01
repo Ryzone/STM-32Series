@@ -1,7 +1,48 @@
 # 寄存器工程
 
-&nbsp;&nbsp;可以说，寄存器是MCU中最基础的部分，绝大部分交互和控制的实现都由操作和配置寄存器来实现的，而常用的基于STD库、HAL库和LL库的编程方式也都是寄存器操作的封装及复杂实现。因此，寄存器版本的工程就是抛去了各种库的外衣后留下的最重要部分。反过来看，上述的各种工程，都是建立在寄存器工程之上的。所以，学会如何建立寄存器工程，是很有必要的
+首先，在目录下填充文件
+<detials>
+  <summary> 文件目录 <summary/>
+<pre>
 
-## Step.1 创建工程目录
-
-
+└─STM32_ProjectTemplate
+    ├─CMSIS
+    │  ├─CoreSupport
+    │  │  ├─Inc
+    │  │  │      core_cm3.h
+    │  │  │      
+    │  │  └─Src
+    │  │          core_cm3.c
+    │  │          
+    │  └─DeviceSupport
+    │      ├─Inc
+    │      │      stm32f10x.h
+    │      │      system_stm32f10x.h
+    │      │      
+    │      └─Src
+    │              system_stm32f10x.c
+    │              
+    ├─Drivers
+    │  ├─HAL_Driver
+    │  │  ├─Inc
+    │  │  └─Src
+    │  ├─LL_Driver
+    │  │  ├─Inc
+    │  │  └─Src
+    │  └─STD_Driver
+    │      ├─Inc
+    │      └─Src
+    ├─MDK-ARM
+    │  │  startup_stm32f10x_hd.s
+    │  │  STM32_ProjectTemplate.uvprojx
+    │  │  
+    │  ├─DebugConfig
+    │  ├─Listings
+    │  └─Objects
+    └─User
+        ├─Include
+        └─Source
+                main.c
+                
+<pre/>
+<detials/>
