@@ -1,4 +1,4 @@
-# 寄存器工程
+### 寄存器工程
 
 首先，我们基于现有目录来添加文件，形成以下结构：
 
@@ -45,22 +45,38 @@
   </pre>
 </details>
 
-其次便是利用MDK在MDK-ARM文件夹下新建工程，
+其次便是利用MDK在MDK-ARM文件夹下新建工程
 
-Project -> New μVision Project... -> 工程名 -> Save
+<pre> Project -> New μVision Project... -> ~工程名称~ -> Save </pre>
 
 根据提示选择对应的芯片
 
-然后，打开 Manage Project Items，创建逻辑目录并归入工程文件，把需要用到的工程源文件和汇编文件都添加进来，方便编译器顺利找到它们。这里的目录与上面的文件路径无太大关联，倒是能方便开发者归类和管理文件，不过本身的路径我们已经规划好了，所以如没有特殊情况还是尽量保持一致会比较好
+<pre> Select Device for Target... -> STMicroelectronics -> STMF* Series -> ~芯片型号~ -> OK </pre>
 
-接着，点击 Options for Target，切换至
-
-
-Output 选项卡：
+Manage Run-Time Environment 配置运行环境，一般只要PACK的版本没有问题直接OK就可以
 
 
+然后，打开 Manage Project Items，创建逻辑目录并归入工程文件，把需要用到的工程**源文件**和**汇编文件**都添加进来，方便编译器顺利找到它们
 
-再者，
+> 这里的目录与上面的文件路径无太大关联，倒是能方便开发者归类和管理文件，不过本身的路径我们已经规划好了，所以如没有特殊情况还是尽量保持一致会比较好
+
+接着，点击 **Options for Target**按钮，切换至
+
+**Output** 选项卡：
+
+勾选上*Create HEX File*，使工程输出HEX类型文件
+
+**C/C++** 选项卡：
+
+在*Preprocessor Symbols*栏的*Define*框中，根据芯片容量填写*STM32F10x_HD*、*STM32F10x_MD*或*STM32F10x_LD*
+
+> 通过预处理器，编译器可选择具体的初始化方式，正确映射寄存器地址
+
+在*Include Paths*栏中，点击右侧的省略号，添加工程用到的所有头文件路径
+
+> 
+
+再者
 
 最后
 
