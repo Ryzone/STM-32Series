@@ -16,10 +16,10 @@
     │  └─DeviceSupport
     │      ├─Inc
     │      │      stm32f10x.h
-    │      │      system_stm32f10x.h
+    │      │      system_stm32f*x.h
     │      │      
     │      └─Src
-    │              system_stm32f10x.c
+    │              system_stm32f*x.c
     │                
     ├─Drivers
     │  ├─HAL_Driver
@@ -32,7 +32,7 @@
     │      ├─Inc
     │      └─Src
     ├─MDK-ARM
-    │  │  startup_stm32f10x_hd.s
+    │  │  startup_stm32f*x_hd.s
     │  │  STM32_ProjectTemplate.uvprojx
     │  │  
     │  ├─DebugConfig
@@ -44,6 +44,8 @@
                 main.c
   </pre>
 </details>
+
+至于其中core内核文件是选择cm3还是cm4，主要看芯片属于Cortex-M3还是Cortex-M4架构了
 
 #### 其次，便是利用MDK在MDK-ARM文件夹下新建工程
 
@@ -67,7 +69,9 @@ Manage Run-Time Environment 配置运行环境，一般只要PACK的版本没有
 
 **C/C++** 选项卡：
 
-在*Preprocessor Symbols*栏的*Define*框中，根据芯片容量填写*STM32F10x_HD*、*STM32F10x_MD*或*STM32F10x_LD*
+在*Preprocessor Symbols*栏的*Define*框中，根据芯片容量填写*STM32F\*x_HD*、*STM32F\*x_MD*或*STM32F\*x_LD*，其中H、M、L分别对应的是High、Middle、Low
+
+在*Language/Code Generation*栏中，确保*C99 Mode*框的勾选
 
 > 通过预处理器，编译器可选择具体的初始化方式，正确映射寄存器地址
 
