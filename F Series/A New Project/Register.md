@@ -51,7 +51,7 @@
 
 根据提示选择对应的芯片
 
-    Select Device for Target... -> STMicroelectronics -> STMF* Series -> ~芯片型号~ -> OK
+    Select Device for Target... -> STMicroelectronics -> STM32F* Series -> ~芯片型号~ -> OK
 
 Manage Run-Time Environment 配置运行环境，一般只要PACK的版本没有问题直接OK就可以
 
