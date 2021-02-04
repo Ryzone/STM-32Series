@@ -1,7 +1,5 @@
 # 工程模板
 
----
-
 > STM32系列单片机的学习路上，第一道门槛便是开发环境的搭建与工程模板的建立，首先需要有一个完整的开发环境，才能迈出嵌入式的第一步：
 
 ## Step.0 准备开发环境
@@ -70,25 +68,28 @@
 
 ## Step.2 创建寄存器工程
 
-  CMSIS标准的建立，为芯片内核和外设实现一致且简单的软件接口，使寄存器从单纯的总线地址变得有名有姓，奠定了快速开发的基础，绝大部分交互和控制的实现都能通过操作和配置寄存器来实现。而我们常说的基于函数库的开发均在此之上，倘若将工程中各种库的外衣剥去，不变就是寄存器工程了。因此，了解和学习寄存器，对开发来说是很有必要的
+CMSIS标准的建立，为芯片内核和外设实现一致且简单的软件接口，使寄存器从单纯的总线地址变得有名有姓，奠定了快速开发的基础，绝大部分交互和控制的实现都能通过操作和配置寄存器来实现。而我们常说的基于函数库的开发均在此之上，倘若将工程中各种库的外衣剥去，不变就是寄存器工程了。因此，了解和学习寄存器，对开发来说是很有必要的
 
->  虽说各系列芯片的工程都是基于CMSIS标准来建立，一种芯片的工程建立方式能很容易应用于其他版本，但随着版本的更新和新型号陆续推出，工程结构仍有异同，因此还是区分讲解为宜
+>  虽说各系列芯片的工程都是基于CMSIS标准，一种芯片的工程建立方式能很容易应用于其他型号，但随着版本的更新和新型号陆续推出，工程结构仍有异同，因此还是区分讲解为宜
 
-* STM32 F系列：[F Series](https://github.com/Ryzone/STM-32Series/blob/main/F%20Series/A%20New%20Project/Register.md)
-* STM32 G系列：[G Series](https://github.com/Ryzone/STM-32Series/blob/main/G%20Series/A%20New%20Project/Register.md)
+* STM32 F系列：[F Register](https://github.com/Ryzone/STM-32Series/blob/main/F%20Series/A%20New%20Project/Register.md)
+* STM32 G系列：[G Register](https://github.com/Ryzone/STM-32Series/blob/main/G%20Series/A%20New%20Project/Register.md)
 
 ## Step.3 扩充函数库
 
-|          | [F Series](https://github.com/Ryzone/STM-32Series/tree/main/F%20Series/A%20New%20Project) | [G Series](https://github.com/Ryzone/STM-32Series/tree/main/G%20Series/A%20New%20Project) |
-|:---------|:--------:|:--------:|
-|    HAL   | [F-HAL]()| [G-HAL]()|
-|    LL    | [F-LL]() | [G-LL]() |
-|    STD   | [F-STD]()|
+有了寄存器工程，我们就能轻易的进行函数库的扩充，而且在一些性能足够的硬件平台上，除了标准库和用户私有库，也可以挂载实时操作系统RTOS，从而使开发者能够自行在资源利用和开发效率之间找到一个合适的权衡
+
+> 当然，由于标准库之间关系复杂，官方无法做到全系列全支持，下面便是目前各芯片标准库工程建立方式和情况一览
+
+|                                                                                         |  STD库  |  LL库  |  HAL库  |
+|:---------------------------------------------------------------------------------------:|:-------:|:-----:|:-----:|
+|[F Series](https://github.com/Ryzone/STM-32Series/tree/main/F%20Series/A%20New%20Project)|  支持  |  支持  |  支持  |
+|[G Series](https://github.com/Ryzone/STM-32Series/tree/main/G%20Series/A%20New%20Project)| 不支持 | 不支持 | 不支持 |
 
 
 ## Step.4 机械降神STM32CubeMX
 
-为了解决建立工程模板带来的种种困难，也为了新标准库的加入，加速开发流程，
+正所谓道高一尺魔高一丈，为了解决建立工程模板带来的种种困难，也为了新标准库的加入，加速开发流程，ST公司力推工程模板生成器，虽然确实方便使用，但仍需要一定学习和适应的成本
 
 
 ## Step.5 小结
