@@ -72,14 +72,14 @@
 
   CMSIS标准的建立，为芯片内核和外设实现一致且简单的软件接口，使寄存器从单纯的总线地址变得有名有姓，奠定了快速开发的基础，绝大部分交互和控制的实现都能通过操作和配置寄存器来实现。而我们常说的基于函数库的开发均在此之上，倘若将工程中各种库的外衣剥去，不变就是寄存器工程了。因此，了解和学习寄存器，对开发来说是很有必要的
 
-  虽说都是基于CMSIS标准，但随着版本的更新和新型号陆续推出，不同系列的芯片的工程结构不尽相同，这里进行区分
+>  虽说各系列芯片的工程都是基于CMSIS标准来建立，一种芯片的工程建立方式能很容易应用于其他版本，但随着版本的更新和新型号陆续推出，工程结构仍有异同，因此还是区分讲解为宜
 
-* STM32 F系列：[F Series](https://github.com/Ryzone/STM-32Series/tree/main/F%20Series/A%20New%20Project)
-* STM32 G系列：[G Series](https://github.com/Ryzone/STM-32Series/tree/main/G%20Series/A%20New%20Project)
+* STM32 F系列：[F Series](https://github.com/Ryzone/STM-32Series/blob/main/F%20Series/A%20New%20Project/Register.md)
+* STM32 G系列：[G Series](https://github.com/Ryzone/STM-32Series/blob/main/G%20Series/A%20New%20Project/Register.md)
 
 ## Step.3 扩充函数库
 
-|          | F Series | G Series |
+|          | [F Series](https://github.com/Ryzone/STM-32Series/tree/main/F%20Series/A%20New%20Project) | [G Series](https://github.com/Ryzone/STM-32Series/tree/main/G%20Series/A%20New%20Project) |
 |:---------|:--------:|:--------:|
 |    HAL   | [F-HAL]()| [G-HAL]()|
 |    LL    | [F-LL]() | [G-LL]() |
